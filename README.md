@@ -1,6 +1,8 @@
 # ClientHappy — Landing Page
 
-Marketing landing page for [ClientHappy](https://github.com/egehakan/client-happy) — a structured client feedback tool. Built with Next.js 16, React 19, and shadcn/ui.
+**Live site:** [clienthappy.com](https://clienthappy.com) · **App:** [app.clienthappy.com](https://app.clienthappy.com) · **App source:** [github.com/egehakan/client-happy](https://github.com/egehakan/client-happy)
+
+Marketing landing page for [ClientHappy](https://clienthappy.com) — a structured client feedback tool. Built with Next.js 16, React 19, and shadcn/ui.
 
 > **License:** Source-available under [PolyForm Noncommercial 1.0.0](./LICENSE.md). You can read, fork, run, and modify this for personal, research, educational, and non-profit use. **Commercial use — including using this page or its components as part of a commercial offering — is not permitted.** See the LICENSE for full terms.
 
