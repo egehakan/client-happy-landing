@@ -4,14 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useTheme } from "next-themes"
-// import { Twitter, Github, Linkedin } from "lucide-react"
 import { SITE_CONFIG, NAV_LINKS } from "@/lib/constants"
-
-// const socialIconMap: Record<string, React.ElementType> = {
-//   Twitter,
-//   Github,
-//   Linkedin,
-// }
 
 export function Footer() {
   const { resolvedTheme } = useTheme()
@@ -21,16 +14,14 @@ export function Footer() {
     setMounted(true)
   }, [])
 
-  const logoSrc = mounted && resolvedTheme === "dark"
-    ? "/logo/logo-white.png"
-    : "/logo/logo.png"
+  const logoSrc =
+    mounted && resolvedTheme === "dark" ? "/logo/logo-white.png" : "/logo/logo.png"
 
   return (
-    <footer className="border-t border-border/50 bg-muted/30">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {/* Brand column */}
-          <div className="lg:col-span-1">
+    <footer className="border-t border-border">
+      <div className="mx-auto max-w-6xl px-6 py-16 lg:px-8 lg:py-20">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr_1fr] md:gap-16">
+          <div>
             <Link href="/" className="inline-block">
               {mounted ? (
                 <Image
@@ -38,30 +29,30 @@ export function Footer() {
                   alt={SITE_CONFIG.name}
                   width={140}
                   height={32}
-                  className="h-8 w-auto"
+                  className="h-7 w-auto"
                 />
               ) : (
-                <div className="h-8 w-[140px] animate-pulse rounded bg-muted" />
+                <div className="h-7 w-[120px] animate-pulse rounded bg-muted" />
               )}
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground">
-              {SITE_CONFIG.tagline}
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              A small tool for collecting written client feedback on web and mobile projects.
             </p>
-            <p className="mt-2 text-sm text-muted-foreground">
-              Gather structured feedback from clients with visual voting and
-              custom questionnaires.
+            <p className="mt-6 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
+              MMXXVI · clienthappy.com
             </p>
           </div>
 
-          {/* Navigation links */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Navigation</h3>
+            <h3 className="mb-5 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
+              Index
+            </h3>
             <ul className="space-y-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-sm text-foreground/80 transition-colors hover:text-foreground"
                   >
                     {link.label}
                   </a>
@@ -70,73 +61,35 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Get Started */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Get Started</h3>
+            <h3 className="mb-5 font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
+              Start
+            </h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href={SITE_CONFIG.ctaLink}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-sm text-foreground/80 transition-colors hover:text-foreground"
                 >
-                  Create Account
+                  Create an account
                 </Link>
               </li>
               <li>
                 <Link
                   href={SITE_CONFIG.appUrl}
-                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-sm text-foreground/80 transition-colors hover:text-foreground"
                 >
-                  Sign In
+                  Sign in
                 </Link>
               </li>
             </ul>
           </div>
-
-          {/* Legal links - commented out for now */}
-          {/* <div>
-            <h3 className="mb-4 text-sm font-semibold">Legal</h3>
-            <ul className="space-y-3">
-              {FOOTER_LINKS.legal.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div> */}
-
-          {/* Social links - commented out for now */}
-          {/* <div>
-            <h3 className="mb-4 text-sm font-semibold">Connect</h3>
-            <div className="flex gap-4">
-              {FOOTER_LINKS.social.map((link) => {
-                const Icon = socialIconMap[link.icon] || Twitter
-                return (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground transition-colors hover:text-foreground"
-                    aria-label={link.label}
-                  >
-                    <Icon className="h-5 w-5" />
-                  </a>
-                )
-              })}
-            </div>
-          </div> */}
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 border-t border-border/50 pt-8">
-          <p className="text-center text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
+        <div className="mt-16 flex flex-col items-start justify-between gap-3 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center">
+          <p>&copy; {new Date().getFullYear()} {SITE_CONFIG.name}</p>
+          <p className="font-mono uppercase tracking-[0.16em]">
+            Made by a small studio that needed it
           </p>
         </div>
       </div>

@@ -1,66 +1,60 @@
 // Site configuration
 export const SITE_CONFIG = {
   name: "ClientHappy",
-  tagline: "Client Feedback, Simplified",
+  tagline: "Client feedback that fits on one link.",
   description:
-    "Gather structured feedback from clients with visual voting and custom questionnaires. Share a link, get results.",
-  ctaText: "Get Started Free",
+    "Share a link. Your client clicks Yes, Maybe, or No on every screen and leaves a note. You get a clean record instead of a Slack thread.",
+  ctaText: "Start a project",
   ctaLink: "https://app.clienthappy.com/register",
   appUrl: "https://app.clienthappy.com",
 }
 
 // Navigation links
 export const NAV_LINKS = [
-  { label: "Why ClientHappy", href: "#why-clienthappy" },
+  { label: "Why", href: "#why-clienthappy" },
   { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
+  { label: "How it works", href: "#how-it-works" },
   { label: "Preview", href: "#preview" },
   { label: "FAQ", href: "#faq" },
 ]
 
-// Features for bento grid
+// Features for the features section
 export const FEATURES = [
   {
-    title: "Visual Voting",
+    title: "Yes, Maybe, No",
     description:
-      "Clients vote Yes, Maybe, or No on each screenshot with optional comments. Instantly understand their preferences.",
+      "Three buttons, one comment box. That's the whole voting screen. Clients move through it without instructions.",
     icon: "ThumbsUp",
-    size: "large",
   },
   {
-    title: "Custom Questionnaires",
+    title: "Questionnaires that aren't a Google Form",
     description:
-      "8 field types including text, dropdowns, file uploads, color pickers, dates, and more.",
+      "Eight field types: text, long text, dropdown, checkboxes, file upload, date, color, URL. Pick what you actually need.",
     icon: "ClipboardList",
-    size: "normal",
   },
   {
-    title: "No Client Login Required",
+    title: "No client accounts",
     description:
-      "Share a simple link. Clients just enter their email and start voting. No accounts, no friction.",
+      "Your client opens the link, types their email, and starts. No password reset emails, no friction.",
     icon: "Link",
-    size: "normal",
   },
   {
-    title: "Organized by Pages & Sections",
+    title: "Organized like a project",
     description:
-      "Structure your project like your website: pages, sections, and screenshots. Everything stays organized.",
+      "Pages contain sections, sections contain screenshots. Same structure your designer already uses in Figma.",
     icon: "Layers",
-    size: "normal",
   },
   {
-    title: "Real-time Dashboard",
+    title: "All the answers in one place",
     description:
-      "See vote distributions, read comments, and track completion status. All feedback in one place.",
+      "Vote counts per screen, comments grouped by reviewer, questionnaire responses ready to copy into a brief.",
     icon: "BarChart3",
-    size: "normal",
   },
   {
-    title: "File Uploads & Attachments",
+    title: "Uploads where they belong",
     description:
-      "Clients can upload logos, documents, and reference images directly in questionnaires.",
+      "Clients drop logos, references, and PDFs into the questionnaire instead of attaching them to a forwarded email.",
     icon: "Upload",
-    size: "wide",
   },
 ]
 
@@ -68,110 +62,71 @@ export const FEATURES = [
 export const HOW_IT_WORKS = [
   {
     step: 1,
-    title: "Create Your Project",
+    title: "Set up the project",
     description:
-      "Upload screenshots organized by pages and sections. Add questionnaire questions if needed.",
-    icon: "FolderPlus",
+      "Upload your screens, group them by page and section, and write the questions you want answered.",
   },
   {
     step: 2,
-    title: "Share With Client",
+    title: "Send the link",
     description:
-      "Copy the unique project link and send it to your client. No account needed for them.",
-    icon: "Share2",
+      "One URL, copy it into an email or a chat. You don't add your client to anything.",
   },
   {
     step: 3,
-    title: "Client Provides Feedback",
+    title: "They go through it",
     description:
-      "Client votes Yes/Maybe/No on each screenshot and answers your questionnaire.",
-    icon: "MessageSquare",
+      "Yes, Maybe, or No on every screen, with a comment if they have one. Questionnaire after, if you set one up.",
   },
   {
     step: 4,
-    title: "Review & Decide",
+    title: "Read what they said",
     description:
-      "See all feedback in your dashboard. Make informed decisions based on clear data.",
-    icon: "CheckCircle",
+      "Open the responses tab and read the answers in the order you laid the project out.",
   },
 ]
-
-// Testimonials (commented out - no clients yet)
-// export const TESTIMONIALS = [
-//   {
-//     quote:
-//       "ClientHappy transformed how we collect feedback. Our clients love the simple voting system!",
-//     name: "Sarah Chen",
-//     role: "Creative Director",
-//     company: "PixelPerfect Agency",
-//     avatar: "/avatars/avatar-1.png",
-//   },
-//   {
-//     quote:
-//       "No more endless email chains trying to understand what clients want. This tool is a game-changer.",
-//     name: "Marcus Johnson",
-//     role: "Freelance Developer",
-//     company: "Self-employed",
-//     avatar: "/avatars/avatar-2.png",
-//   },
-//   {
-//     quote:
-//       "The questionnaire feature is brilliant. We get all the info we need upfront, every time.",
-//     name: "Emily Rodriguez",
-//     role: "Project Manager",
-//     company: "WebCraft Studios",
-//     avatar: "/avatars/avatar-3.png",
-//   },
-// ]
-
-// Stats (commented out - no clients yet)
-// export const STATS = [
-//   { value: "10,000+", label: "Screenshots Reviewed" },
-//   { value: "500+", label: "Happy Teams" },
-//   { value: "95%", label: "Faster Feedback" },
-// ]
 
 // FAQ items
 export const FAQ_ITEMS = [
   {
-    question: "How do I get started?",
+    question: "Is it actually free?",
     answer:
-      "Simply create an account, set up your first project, upload screenshots, and share the link with your client. It only takes a few minutes to get your first feedback.",
+      "Yes. No card, no trial counter, no upsell waiting at the end. We pay for hosting and storage; the product is free while it's small enough that we can.",
   },
   {
-    question: "Do my clients need to create an account?",
+    question: "Do my clients have to make an account?",
     answer:
-      "No. Your clients simply click the link you share and enter their email to start voting. No passwords, no sign-up process. It takes seconds to get started.",
+      "No. They open your link, type their email so we know which votes are theirs, and start. If they come back later, we remember where they left off.",
   },
   {
-    question: "What types of questions can I include in questionnaires?",
+    question: "What kinds of questions can I ask in a questionnaire?",
     answer:
-      "We support 8 field types: text input, text area, dropdown select, checkboxes, file upload, date picker, color picker, and URL input. You can create any combination of questions.",
+      "Short text, long text, dropdown, checkboxes, file upload, date, color picker, and URL. You combine those into whatever shape you need.",
   },
   {
-    question: "How do clients vote on screenshots?",
+    question: "What does the voting screen actually look like?",
     answer:
-      "Clients see each screenshot one at a time and vote Yes, Maybe, or No. They can also add optional comments to explain their choice. A progress bar shows how many they've completed.",
+      "One screenshot at a time, three buttons, a comment box, and a progress bar at the top. Thumbnails along the bottom so they can jump back if they change their mind.",
   },
   {
-    question: "Where is my data stored?",
+    question: "Where is the data?",
     answer:
-      "All data is securely stored in the cloud using enterprise-grade database and file storage. Your screenshots and client responses are safe and accessible only to you.",
+      "Turso (SQLite) for the database, Vercel Blob for files. Only you can see the responses for your own projects.",
   },
   {
-    question: "Can I use this for mobile app projects?",
+    question: "Does this work for mobile apps?",
     answer:
-      "Absolutely! When creating a project, you can select 'mobile' as the project type. The interface works great for reviewing mobile app screenshots and mockups.",
+      "Yes. When you create the project you pick web or mobile, and the layout adjusts. The voting flow is the same either way.",
   },
   {
-    question: "How many projects can I create?",
+    question: "Is there a limit on projects or clients?",
     answer:
-      "There's no limit! Create as many projects as you need for different clients or different versions of the same project.",
+      "No. Make as many as you want. Share with as many clients as you want.",
   },
   {
-    question: "Can my team members access the same projects?",
+    question: "Can my team see the same project?",
     answer:
-      "Currently, each account manages their own projects. Team collaboration features are on our roadmap for future updates.",
+      "Not yet. Right now each account owns its own projects. Multi-seat is on the list.",
   },
 ]
 
@@ -179,12 +134,12 @@ export const FAQ_ITEMS = [
 export const FOOTER_LINKS = {
   product: [
     { label: "Features", href: "#features" },
-    { label: "How It Works", href: "#how-it-works" },
+    { label: "How it works", href: "#how-it-works" },
     { label: "FAQ", href: "#faq" },
   ],
   legal: [
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
+    { label: "Privacy", href: "/privacy" },
+    { label: "Terms", href: "/terms" },
   ],
   social: [
     { label: "Twitter", href: "https://twitter.com", icon: "Twitter" },
@@ -195,17 +150,17 @@ export const FOOTER_LINKS = {
 
 // Problem/Solution content
 export const PROBLEMS = [
-  "Scattered feedback across emails and calls",
-  "Clients struggle to articulate preferences",
-  "Feedback gets lost or forgotten",
-  "No structure or organization",
-  "Time wasted chasing responses",
+  "Feedback arrives in five emails and a voice note.",
+  "Your client says 'I'll know it when I see it' and means it.",
+  "Half the replies are about the wrong screen.",
+  "Two weeks later nobody remembers what was decided.",
+  "You start the next round guessing.",
 ]
 
 export const SOLUTIONS = [
-  "Visual voting: Yes, Maybe, No - instantly clear",
-  "Structured questionnaires guide client input",
-  "All feedback organized in one dashboard",
-  "Pages and sections keep everything tidy",
-  "Share a link, get responses automatically",
+  "One link replaces the email chain.",
+  "Yes, Maybe, or No removes the guessing.",
+  "Every comment is attached to the screen it's about.",
+  "The record stays put, in the order you built the project.",
+  "You start the next round knowing what to change.",
 ]

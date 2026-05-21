@@ -3,131 +3,174 @@
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowRight, Sparkles } from "lucide-react"
+import { ThumbsUp, Minus, ThumbsDown, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SITE_CONFIG } from "@/lib/constants"
 
+const ease = [0.22, 1, 0.36, 1] as const
+
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-12 md:pt-24 md:pb-16 md:min-h-screen">
-      {/* Background gradient */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/5" />
-        <div className="absolute top-1/4 left-1/4 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-primary/5 blur-3xl" />
-      </div>
-
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center text-center">
-          {/* Badge */}
+    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-16 px-6 lg:grid-cols-[1.1fr_1fr] lg:items-center lg:gap-20 lg:px-8">
+        <div>
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-6"
+            transition={{ duration: 0.5, ease }}
+            className="mb-8 flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted-foreground"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-border/50 bg-muted/50 px-4 py-1.5 text-sm font-medium text-muted-foreground backdrop-blur-sm">
-              <Sparkles className="h-4 w-4" />
-              Streamline Your Client Feedback
-            </span>
+            <span className="font-mono">No 01</span>
+            <span className="h-px flex-1 max-w-12 bg-border" />
+            <span>A feedback tool for studios</span>
           </motion.div>
 
-          {/* Headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="max-w-4xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl"
+            transition={{ duration: 0.6, ease, delay: 0.05 }}
+            className="text-[2.5rem] font-semibold leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-[4.25rem]"
           >
-            <span className="bg-gradient-to-r from-foreground via-foreground/80 to-foreground bg-clip-text">
-              Client Feedback,
-            </span>
+            Client feedback,
             <br />
-            <span className="bg-gradient-to-r from-primary via-primary/80 to-primary bg-clip-text text-transparent">
-              Simplified
-            </span>
+            <span className="italic font-normal">in writing.</span>
           </motion.h1>
 
-          {/* Subheadline */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-4 max-w-2xl text-base text-muted-foreground sm:mt-6 sm:text-lg md:text-xl"
+            transition={{ duration: 0.6, ease, delay: 0.12 }}
+            className="mt-7 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg"
           >
             {SITE_CONFIG.description}
           </motion.p>
 
-          {/* CTA Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row"
+            transition={{ duration: 0.6, ease, delay: 0.2 }}
+            className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-4"
           >
-            <Button asChild size="lg" className="gap-2 text-base">
+            <Button asChild size="lg" className="h-11 px-6 text-sm">
               <Link href={SITE_CONFIG.ctaLink}>
                 {SITE_CONFIG.ctaText}
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="ml-1.5 h-4 w-4" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-base">
-              <a href="#how-it-works">See How It Works</a>
-            </Button>
+            <a
+              href="#how-it-works"
+              className="group inline-flex items-center gap-1.5 text-sm font-medium text-foreground/80 underline-offset-4 hover:text-foreground hover:underline"
+            >
+              See how it works
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            </a>
           </motion.div>
 
-          {/* Product Screenshot */}
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-            className="mt-10 w-full max-w-5xl sm:mt-16"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease, delay: 0.3 }}
+            className="mt-12 flex items-center gap-2 text-xs text-muted-foreground"
           >
-            <div className="relative rounded-xl border border-border/50 bg-card/50 p-2 shadow-2xl backdrop-blur-sm">
-              {/* Browser chrome */}
-              <div className="flex items-center gap-2 border-b border-border/50 pb-2">
-                <div className="flex gap-1.5 pl-2">
-                  <div className="h-2.5 w-2.5 rounded-full bg-red-500/80 sm:h-3 sm:w-3" />
-                  <div className="h-2.5 w-2.5 rounded-full bg-yellow-500/80 sm:h-3 sm:w-3" />
-                  <div className="h-2.5 w-2.5 rounded-full bg-green-500/80 sm:h-3 sm:w-3" />
-                </div>
-                <div className="mx-auto flex-1 max-w-md hidden sm:block">
-                  <div className="rounded-md bg-muted/50 px-3 py-1 text-xs text-muted-foreground text-center">
-                    app.clienthappy.com/projects/your-project
-                  </div>
-                </div>
-                <div className="w-4 sm:w-16" />
-              </div>
-
-              {/* Screenshot */}
-              <div className="relative rounded-lg overflow-hidden">
-                {/* Mobile screenshot */}
-                <div className="block sm:hidden">
-                  <Image
-                    src="/screenshots/voting-mobile.png"
-                    alt="ClientHappy voting interface on mobile"
-                    width={800}
-                    height={600}
-                    className="w-full h-auto"
-                    priority
-                  />
-                </div>
-                {/* Desktop screenshot */}
-                <div className="hidden sm:block">
-                  <Image
-                    src="/screenshots/voting-page.png"
-                    alt="ClientHappy voting interface"
-                    width={1920}
-                    height={1200}
-                    className="w-full h-auto"
-                    priority
-                  />
-                </div>
-              </div>
-            </div>
+            <span className="font-mono">$0</span>
+            <span>·</span>
+            <span>No card</span>
+            <span>·</span>
+            <span>No client logins</span>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease, delay: 0.15 }}
+          className="relative"
+        >
+          <HeroVoteCard />
+        </motion.div>
       </div>
     </section>
+  )
+}
+
+function HeroVoteCard() {
+  return (
+    <div className="relative mx-auto w-full max-w-md">
+      <div className="absolute -inset-x-6 -inset-y-4 -z-10 rounded-3xl bg-muted/40" aria-hidden />
+
+      <div className="overflow-hidden rounded-xl border border-border bg-card">
+        <div className="flex items-center justify-between border-b border-border px-5 py-3 text-[11px] uppercase tracking-[0.16em] text-muted-foreground">
+          <span className="font-mono">Homepage · Hero</span>
+          <span className="font-mono">03 / 12</span>
+        </div>
+
+        <div className="relative aspect-[4/3] bg-muted">
+          <Image
+            src="/screenshots/voting-page.png"
+            alt="Voting on a screenshot"
+            fill
+            className="object-cover object-top"
+            sizes="(min-width: 1024px) 480px, 100vw"
+            priority
+          />
+        </div>
+
+        <div className="space-y-4 p-5">
+          <div className="grid grid-cols-3 gap-2">
+            <VoteButton variant="yes" />
+            <VoteButton variant="mid" />
+            <VoteButton variant="no" />
+          </div>
+          <div className="rounded-md border border-border bg-background px-3 py-2.5 text-xs text-muted-foreground">
+            Love the typography, but the hero feels heavy on the left.
+          </div>
+        </div>
+      </div>
+
+      <FloatingComment />
+    </div>
+  )
+}
+
+function VoteButton({ variant }: { variant: "yes" | "mid" | "no" }) {
+  const config = {
+    yes: { Icon: ThumbsUp, label: "Yes", active: true },
+    mid: { Icon: Minus, label: "Maybe", active: false },
+    no: { Icon: ThumbsDown, label: "No", active: false },
+  }[variant]
+
+  return (
+    <button
+      type="button"
+      className={`flex items-center justify-center gap-1.5 rounded-md border px-3 py-2 text-xs font-medium transition-colors ${
+        config.active
+          ? "border-foreground bg-foreground text-background"
+          : "border-border bg-background text-foreground/80 hover:bg-muted"
+      }`}
+      tabIndex={-1}
+      aria-hidden
+    >
+      <config.Icon className="h-3.5 w-3.5" />
+      {config.label}
+    </button>
+  )
+}
+
+function FloatingComment() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 20, y: 10 }}
+      animate={{ opacity: 1, x: 0, y: 0 }}
+      transition={{ duration: 0.7, ease, delay: 0.6 }}
+      className="absolute -right-4 top-12 hidden w-44 rounded-md border border-border bg-card p-3 shadow-sm md:block"
+      aria-hidden
+    >
+      <div className="mb-1 text-[10px] uppercase tracking-[0.16em] text-muted-foreground font-mono">
+        jane @ acme
+      </div>
+      <p className="text-xs leading-snug text-foreground/85">
+        Yes. Same as v2, just less green.
+      </p>
+    </motion.div>
   )
 }
